@@ -255,7 +255,7 @@ body {
 .container .wrapper .wrapper-status .box-cicle .bg .oxyen img.icon-oxyen {
   position: absolute;
   top: calc(8 * var(--px));
-  width: calc(25 * var(--px));
+  width: calc(22 * var(--px));
 }
 .container .wrapper .wrapper-status .box-cicle .bg .food .percen,
 .container .wrapper .wrapper-status .box-cicle .bg .brain .percen,
