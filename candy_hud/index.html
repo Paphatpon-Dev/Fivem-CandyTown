@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SCSS Style</title>
+    <link rel="stylesheet" href="./css/main.css" />
+    <style>
+      #app {
+        background-image: url("./iPTAdYV.png");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <div class="container relative">
+        <div class="wrapper absolute">
+          <div class="wrapper-status">
+            <div class="box-stamina">
+              <div class="bg-1">
+                <div class="bg-2">
+                  <div class="bg-3"><img src="./img/stamina.svg" alt="" class="absolute"></div>
+                </div>
+                <div class="circle" style="--percent: 100"></div>
+              </div>
+            </div>
+            <div class="box-hp-armor">
+              <div class="hp">
+                <div class="text-hp">
+                  <div>HEALTH</div>
+                  <div>100%</div>
+                </div>
+                <div class="progress">
+                    <div
+                      class="progress-value"
+                      style="--percent: 100%"
+                    ></div>
+                  </div>
+              </div>
+              <div class="armor">
+                <div class="text-armor">
+                  <div>ARMOR</div>
+                  <div class="armor-percen">100%</div>
+                </div>
+                <img class="absolute" src="./img/armor.svg" alt="">
+                <img src="./img/bg-armor.svg" alt="">
+              </div>
+            </div>
+            <div class="box-cicle">
+              <div class="bg">
+                <div class="food">
+                  <img class="icon-food" src="./img/food.svg" alt="">
+                  <div class="percen">100</div>
+                </div>
+                 <div class="cicle" style="--percent: 100;"></div>
+              </div>       
+              <div class="bg">
+                <div class="brain">
+                  <img class="icon-brain" src="./img/brain.svg" alt="">
+                  <div class="percen">100</div>
+                </div>
+                 <div class="cicle" style="--percent: 100;"></div>
+              </div>       
+              <div class="bg">
+                <div class="oxyen">
+                  <img src="./img/oxyen.svg" alt="">
+                  <div class="percen">100</div>
+                </div>
+                 <div class="cicle" style="--percent: 100;"></div>
+              </div>       
+            </div>
+          </div>         
+        </div>
+        <div class="wrapper-online-time">
+            <div class="pulsing"></div>
+            <div class="id">ID 9999</div>
+            <div class="date">09/01/2026</div>
+            <div class="time">23:00</div>
+            <div class="voice">
+              <div class="voice-1 active"></div>
+              <div class="voice-2 active"></div>
+              <div class="voice-3 active"></div>
+              <div class="voice-3"></div>
+              <div class="voice-2"></div>
+              <div class="voice-1"></div>
+
+            </div>
+            <div class="name">SHOUTING</div>
+        </div>
+        <div class="wrapper-online-agency">
+          <div class="police">
+            <div class="right"></div>
+            <img src="./img/police.svg" alt="">
+            <div>100</div>
+          </div>
+          <div class="doctor">
+             <div class="right"></div>
+            <img src="./img/doctor.svg" alt="">
+            <div>100</div>
+          </div>
+          <div class="council">
+             <div class="right"></div>
+            <img src="./img/council.svg" alt="">
+            <div>100</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./js/script.js"></script>
+  </body>
+</html>
