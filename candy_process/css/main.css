@@ -1,0 +1,389 @@
+@import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
+:root {
+  --font-family: "Chakra Petch", sans-serif;
+  --transitionFactor: 1;
+  /* Color */
+  --color-bg-primary: #131313;
+  --color-bg-primary-50: rgb(19, 19, 19,.50);
+  --color-card-primary: #0A0A0A;
+  --color-card-primary-50: rgb(10, 10, 10,.50);
+  --color-card-blue: #083943;
+  --color-border-red: #8D1A1C;
+  --color-border-blue: #01687E;
+  --color-border-blue-80: rgb(1, 104, 126, 0.8);
+  --color-text-primary: #fff;
+  --color-text-secondary: #AAAAAA;
+  --color-text-red: #BD090B;
+  --color-text-blue: #289BB5;
+  --radius: 10;
+  --base-screen-height: 1440;
+  --scale: 1;
+  --px: calc(1vh / var(--base-screen-height) * 100 * var(--scale));
+  --border-radius: calc(var(--radius) * var(--px));
+}
+
+*,
+::after,
+::before {
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  opacity: 0;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(88, 88, 88, 0.8);
+  border-radius: 0.4vh;
+}
+
+body {
+  position: fixed;
+  padding: 0;
+  margin: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: calc(20 * var(--px));
+}
+
+#app {
+  width: 100vw;
+  height: 100vh;
+  padding: calc(40 * var(--px));
+  position: relative;
+  overflow: hidden;
+  background-image: url("https://i.imgur.com/iPTAdYV.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+}
+.container .wrapper {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+  height: auto;
+}
+.container .wrapper .process {
+  position: relative;
+  width: calc(693 * var(--px));
+  height: calc(207 * var(--px));
+  background-image: url("../img/bg-process.svg");
+  background-repeat: no-repeat;
+}
+.container .wrapper .process .process-key {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: calc(10 * var(--px));
+}
+.container .wrapper .process .process-key .text-1 {
+  color: var(--color-text-blue);
+  font-weight: 900;
+  font-size: calc(20 * var(--px));
+  text-shadow: 0 0 calc(10 * var(--px)) var(--color-text-blue);
+}
+.container .wrapper .process .process-key .text-2 {
+  color: #ffffff;
+  font-weight: 900;
+  font-size: calc(20 * var(--px));
+  text-shadow: 0 0 calc(10 * var(--px)) #ffffff;
+}
+.container .wrapper .process .process-progress {
+  position: absolute;
+  bottom: calc(8 * var(--px));
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  --progress: 75%;
+  max-width: calc(500 * var(--px));
+  width: 100%;
+  height: calc(12 * var(--px));
+  background-color: var(--color-card-primary);
+  border: 1px solid transparent;
+  overflow: hidden;
+}
+.container .wrapper .process .process-progress .process-progressbar-fill {
+  height: 100%;
+  width: var(--progress);
+  background: var(--color-text-blue);
+  background-size: 1rem 1rem;
+  transition: width 1.5s ease;
+}
+.container .wrapper .process .process-items {
+  display: flex;
+  align-items: center;
+  gap: calc(30 * var(--px));
+  width: calc(693 * var(--px));
+  height: calc(200 * var(--px));
+  padding: 0 calc(38 * var(--px));
+}
+.container .wrapper .process .process-items .item-name {
+  position: relative;
+  width: calc(100 * var(--px));
+  height: calc(100 * var(--px));
+  background: rgba(10, 49, 57, 0.5);
+  border: 1px solid #083943;
+  border-radius: calc(5 * var(--px));
+}
+.container .wrapper .process .process-items .item-name img {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(80 * var(--px));
+}
+.container .wrapper .process .process-items .item-name .count {
+  position: absolute;
+  bottom: calc(-10 * var(--px));
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(80 * var(--px));
+  background: var(--color-border-blue);
+  border-radius: calc(5 * var(--px));
+  font-size: calc(16 * var(--px));
+  text-align: center;
+}
+.container .wrapper .process .process-items .spinner {
+  width: calc(50 * var(--px));
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 8px solid rgba(0, 0, 0, 0);
+  border-right-color: rgba(255, 255, 255, 0.5921568627);
+  position: relative;
+  animation: l24 1.5s infinite linear;
+}
+@keyframes l24 {
+  100% {
+    transform: rotate(1turn);
+  }
+}
+.container .wrapper .process .process-items .spinner:before,
+.container .wrapper .process .process-items .spinner:after {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  border: inherit;
+  animation: inherit;
+  animation-duration: 2s;
+}
+.container .wrapper .process .process-items .spinner:after {
+  animation-duration: 4s;
+}
+.container .wrapper .process .process-items .item-list {
+  display: flex;
+  align-items: center;
+  gap: calc(10 * var(--px));
+  width: calc(400 * var(--px));
+  height: calc(110 * var(--px));
+}
+.container .wrapper .process .process-items .item-list .items {
+  position: relative;
+  width: calc(80 * var(--px));
+  height: calc(80 * var(--px));
+  background: rgba(10, 49, 57, 0.5);
+  border: 1px solid #083943;
+  border-radius: calc(5 * var(--px));
+}
+.container .wrapper .process .process-items .item-list .items img {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(60 * var(--px));
+}
+.container .wrapper .process .process-items .item-list .items .count {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  background: var(--color-border-blue);
+  border-radius: 0 0 calc(5 * var(--px)) calc(5 * var(--px));
+  font-size: calc(12 * var(--px));
+  text-align: center;
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.sticky {
+  position: sticky;
+}
+
+.flex {
+  display: flex;
+}
+
+.inline-flex {
+  display: inline-flex;
+}
+
+.grid {
+  display: grid;
+}
+
+.hidden {
+  display: none;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.h-full {
+  height: 100%;
+}
+
+.h-screen {
+  height: 100vh;
+}
+
+.w-screen {
+  width: 100vw;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.lowercase {
+  text-transform: lowercase;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.text-white {
+  color: #fff;
+}
+
+.text-black {
+  color: #000;
+}
+
+.text-gray {
+  color: #999;
+}
+
+.text-red {
+  color: #e74c3c;
+}
+
+.text-green {
+  color: #2ecc71;
+}
+
+.text-blue {
+  color: #3498db;
+}
+
+.border-test {
+  border-width: 1px;
+  border-style: solid;
+  border-color: #e74c3c;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.poem::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 calc(6 * var(--px)) rgba(0, 0, 0, 0.3);
+  border-radius: calc(10 * var(--px));
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.poem::-webkit-scrollbar {
+  width: calc(5 * var(--px));
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.poem::-webkit-scrollbar-thumb {
+  border-radius: calc(10 * var(--px));
+  -webkit-box-shadow: inset 0 0 calc(6 * var(--px)) rgba(0, 0, 0, 0.3);
+  background-color: var(--color-primary);
+}
+
+.poem-x::-webkit-scrollbar-thumb {
+  border-radius: calc(10 * var(--px));
+  -webkit-box-shadow: inset 0 0 calc(6 * var(--px)) rgba(0, 0, 0, 0.3);
+  background-color: var(--color-primary);
+}
+
+.poem-x::-webkit-scrollbar-track {
+  border-radius: calc(10 * var(--px));
+  -webkit-box-shadow: inset 0 0 calc(6 * var(--px)) rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.poem-x::-webkit-scrollbar {
+  width: calc(1 * var(--px));
+  height: calc(5 * var(--px));
+  background-color: rgba(0, 0, 0, 0.3);
+}
